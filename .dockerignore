@@ -1,0 +1,10 @@
+node_modules
+dist
+.git
+.astro
+.vscode
+design
+*.log
+Dockerfile
+.dockerignore
+README.md
