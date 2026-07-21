@@ -1,0 +1,60 @@
+---
+import Icon from "./Icon.astro";
+import { site } from "../data/site";
+---
+<section id="contato" class="pb-20 sm:pb-28">
+  <div class="u-container">
+    <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy to-royal px-6 py-14 sm:px-12 lg:py-16">
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div class="absolute -right-10 top-6 text-gold/20">
+          <Icon name="star" class="h-24 w-24" />
+        </div>
+        <div class="absolute bottom-6 right-1/3 text-white/10">
+          <Icon name="star" class="h-16 w-16" />
+        </div>
+      </div>
+
+      <div class="relative grid items-center gap-10 lg:grid-cols-2">
+        <div class="text-white">
+          <p class="u-eyebrow text-gold">
+            <Icon name="star" class="h-4 w-4" /> Matrículas 2026
+          </p>
+          <h2 class="mt-4 text-3xl font-extrabold sm:text-4xl lg:text-5xl">
+            As matrículas para 2026 já estão abertas!
+          </h2>
+          <p class="mt-5 max-w-lg text-white/75">
+            Garanta a vaga do seu filho na escola que vai prepará-lo para um futuro de sucesso e
+            realizações.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-white/8 p-7 ring-1 ring-white/15 backdrop-blur">
+          <p class="font-display text-lg font-bold text-gold">Vagas limitadas!</p>
+          <p class="mt-1 text-white/80">
+            Entre em contato e agende uma visita personalizada.
+          </p>
+          <div class="mt-6 flex flex-col gap-3">
+            <a
+              href={site.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 font-bold text-navy transition-transform hover:-translate-y-0.5"
+            >
+              Agendar Visita
+              <Icon name="calendar" class="h-4 w-4" />
+            </a>
+            <a
+              href={site.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3.5 font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              Falar no WhatsApp
+              <Icon name="whatsapp" class="h-5 w-5" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

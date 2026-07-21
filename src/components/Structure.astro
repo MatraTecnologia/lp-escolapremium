@@ -1,0 +1,81 @@
+---
+import Icon from "./Icon.astro";
+import Photo from "./Photo.astro";
+import { structure } from "../data/site";
+---
+<section id="estrutura" class="bg-mist py-20 sm:py-28">
+  <div class="u-container">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-xl">
+        <p class="u-eyebrow">
+          <Icon name="star" class="h-4 w-4 text-gold" /> Estrutura completa
+        </p>
+        <h2 class="mt-4 text-3xl font-extrabold text-navy sm:text-4xl">
+          Estrutura completa para grandes conquistas.
+        </h2>
+      </div>
+      <div class="flex gap-2" data-carousel-nav="estrutura">
+        <button type="button" class="carousel-btn" data-dir="-1" aria-label="Anterior">
+          <Icon name="chevron" class="h-5 w-5 rotate-90" />
+        </button>
+        <button type="button" class="carousel-btn" data-dir="1" aria-label="Próximo">
+          <Icon name="chevron" class="h-5 w-5 -rotate-90" />
+        </button>
+      </div>
+    </div>
+
+    <ul
+      class="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      data-carousel="estrutura"
+    >
+      {
+        structure.map((item) => (
+          <li class="w-[16rem] shrink-0 snap-start overflow-hidden rounded-2xl bg-white shadow-card">
+            <div class="aspect-[4/3]">
+              <Photo alt={item.title} label={item.title} tone="royal" />
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-navy">{item.title}</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate">{item.text}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .carousel-btn {
+    display: inline-flex;
+    height: 2.75rem;
+    width: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    border: 1px solid color-mix(in srgb, var(--color-navy) 15%, transparent);
+    background: #fff;
+    color: var(--color-navy);
+    transition: all 0.2s;
+  }
+  .carousel-btn:hover {
+    background: var(--color-navy);
+    color: #fff;
+  }
+</style>
+
+<script>
+  document.querySelectorAll("[data-carousel-nav]").forEach((nav) => {
+    const key = nav.getAttribute("data-carousel-nav");
+    const track = document.querySelector(`[data-carousel="${key}"]`) as HTMLElement;
+    if (!track) return;
+    nav.querySelectorAll("[data-dir]").forEach((btn) =>
+      btn.addEventListener("click", () => {
+        const dir = Number(btn.getAttribute("data-dir"));
+        const card = track.querySelector("li") as HTMLElement;
+        const step = card ? card.offsetWidth + 20 : 280;
+        track.scrollBy({ left: dir * step * 2, behavior: "smooth" });
+      })
+    );
+  });
+</script>

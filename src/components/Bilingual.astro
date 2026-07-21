@@ -1,0 +1,79 @@
+---
+import Icon from "./Icon.astro";
+import { bilingualPoints } from "../data/site";
+
+const badges = [
+  { icon: "globe", label: "Imersão Completa" },
+  { icon: "users", label: "Professores Nativos" },
+  { icon: "trophy", label: "Certificações Internacionais" },
+  { icon: "check", label: "Resultados Comprovados" },
+];
+---
+<section id="bilingue" class="py-20 sm:py-28">
+  <div class="u-container">
+    <div class="relative overflow-hidden rounded-[2rem] bg-navy">
+      <!-- background photo, blending into the navy on the left -->
+      <img
+        src="/banner-meio.png"
+        alt="Crianças da Escola Premium brincando e correndo no parquinho"
+        class="absolute inset-y-0 right-0 hidden h-full w-[72%] object-cover object-[58%_22%] lg:block"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 hidden bg-gradient-to-r from-navy via-navy/90 to-navy/10 lg:block" aria-hidden="true"></div>
+
+      <div class="relative grid items-end gap-10 px-6 py-12 sm:px-12 lg:grid-cols-2 lg:py-16">
+        <div class="text-white">
+          <p class="u-eyebrow text-gold">
+            <Icon name="star" class="h-4 w-4" /> Ensino Bilíngue
+          </p>
+          <h2 class="mt-4 text-3xl font-extrabold sm:text-4xl">
+            Fluência que abre portas para o futuro.
+          </h2>
+          <p class="mt-5 max-w-lg text-white/75">
+            Nosso programa bilíngue oferece imersão completa em inglês desde os primeiros anos,
+            com metodologia internacional e professores nativos qualificados.
+          </p>
+
+          <div class="mt-7 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4">
+            {
+              badges.map((b) => (
+                <div class="flex flex-col items-start gap-2">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-gold">
+                    <Icon name={b.icon} class="h-5 w-5" />
+                  </span>
+                  <span class="text-xs font-semibold leading-tight text-white/85">{b.label}</span>
+                </div>
+              ))
+            }
+          </div>
+
+          <a
+            href="#contato"
+            class="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 font-bold text-navy transition-transform hover:-translate-y-0.5"
+          >
+            Conheça nosso programa
+            <Icon name="arrow" class="h-4 w-4" />
+          </a>
+        </div>
+
+        <div class="lg:justify-self-end">
+          <div class="rounded-2xl bg-navy-900/85 p-6 ring-1 ring-white/15 backdrop-blur-md lg:max-w-xs">
+            <p class="mb-4 font-display text-base font-bold text-white">Resultados que fazem a diferença</p>
+            <ul class="space-y-3">
+              {
+                bilingualPoints.map((p) => (
+                  <li class="flex items-start gap-3 text-sm text-white/85">
+                    <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold text-navy">
+                      <Icon name="check" class="h-3.5 w-3.5" />
+                    </span>
+                    {p}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

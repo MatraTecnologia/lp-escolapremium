@@ -1,0 +1,41 @@
+---
+import Icon from "./Icon.astro";
+import Photo from "./Photo.astro";
+import { gallery } from "../data/site";
+---
+<section id="galeria" class="py-20 sm:py-28">
+  <div class="u-container">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-xl">
+        <p class="u-eyebrow">
+          <Icon name="star" class="h-4 w-4 text-gold" /> Momentos que ficam na memória
+        </p>
+        <h2 class="mt-4 text-3xl font-extrabold text-navy sm:text-4xl">
+          A infância vivida em cada detalhe.
+        </h2>
+      </div>
+      <a
+        href="#contato"
+        class="inline-flex items-center gap-2 rounded-full border border-navy/15 px-5 py-3 text-sm font-semibold text-navy transition-colors hover:bg-mist"
+      >
+        Ver toda a galeria
+        <Icon name="arrow" class="h-4 w-4" />
+      </a>
+    </div>
+
+    <ul class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+      {
+        gallery.map((label, i) => (
+          <li class={`group relative overflow-hidden rounded-2xl ${i === 0 ? "col-span-2 row-span-2 lg:col-span-2 lg:row-span-2" : ""}`}>
+            <div class={i === 0 ? "aspect-square" : "aspect-square"}>
+              <Photo alt={label} label={label} tone={i % 2 ? "navy" : "royal"} class="transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/80 to-transparent p-3 text-sm font-semibold text-white">
+              {label}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

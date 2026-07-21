@@ -1,0 +1,46 @@
+---
+import Icon from "./Icon.astro";
+import Photo from "./Photo.astro";
+import { features } from "../data/site";
+---
+<section id="sobre" class="py-20 sm:py-28">
+  <div class="u-container grid gap-12 lg:grid-cols-[0.8fr_2fr]">
+    <div class="lg:sticky lg:top-28 lg:self-start">
+      <p class="u-eyebrow">
+        <Icon name="star" class="h-4 w-4 text-gold" /> Por que escolher a Escola Premium?
+      </p>
+      <h2 class="mt-4 text-3xl font-extrabold text-navy sm:text-4xl">
+        Uma educação completa para o desenvolvimento integral do seu filho.
+      </h2>
+      <p class="mt-4 text-slate">
+        Cada pilar do nosso projeto pedagógico foi pensado para formar crianças curiosas,
+        seguras e preparadas para o mundo.
+      </p>
+      <a
+        href="#metodologia"
+        class="mt-6 inline-flex items-center gap-2 rounded-full border border-navy/15 px-5 py-3 text-sm font-semibold text-navy transition-colors hover:bg-mist"
+      >
+        Saiba mais
+        <Icon name="arrow" class="h-4 w-4" />
+      </a>
+
+      <div class="mt-8 hidden aspect-[4/3] overflow-hidden rounded-2xl shadow-card ring-1 ring-navy/8 lg:block">
+        <Photo src="/escola-logo.jpg" alt="Fachada da Escola Premium com a logo em destaque" />
+      </div>
+    </div>
+
+    <ul class="grid gap-5 sm:grid-cols-2">
+      {
+        features.map((f) => (
+          <li class="group rounded-2xl border border-navy/8 bg-white p-6 shadow-card transition-transform hover:-translate-y-1">
+            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-navy text-gold transition-colors group-hover:bg-royal group-hover:text-white">
+              <Icon name={f.icon} class="h-6 w-6" />
+            </span>
+            <h3 class="mt-4 text-lg font-bold text-navy">{f.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate">{f.text}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

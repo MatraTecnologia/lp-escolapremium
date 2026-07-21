@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+import { site } from "../data/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = `${site.name} — ${site.tagline}`,
+  description = "Escola bilíngue do berçário ao Fundamental I. Educação forte, ensino de inglês desde os primeiros anos e formação para a vida.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/icone.svg" />
+    <link rel="icon" type="image/png" href="/icone.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#101b73" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

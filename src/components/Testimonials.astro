@@ -1,0 +1,36 @@
+---
+import Icon from "./Icon.astro";
+import { testimonials } from "../data/site";
+---
+<section id="depoimentos" class="bg-mist py-20 sm:py-28">
+  <div class="u-container">
+    <p class="u-eyebrow">
+      <Icon name="star" class="h-4 w-4 text-gold" /> O que os pais dizem sobre nós
+    </p>
+    <h2 class="mt-4 max-w-2xl text-3xl font-extrabold text-navy sm:text-4xl">
+      Famílias que confiam a formação dos filhos à Escola Premium.
+    </h2>
+
+    <ul class="mt-12 grid gap-6 md:grid-cols-3">
+      {
+        testimonials.map((t) => (
+          <li class="flex flex-col rounded-2xl bg-white p-7 shadow-card">
+            <div class="flex gap-1 text-gold">
+              {[0, 1, 2, 3, 4].map(() => <Icon name="star" class="h-5 w-5" />)}
+            </div>
+            <p class="mt-4 flex-1 text-slate leading-relaxed">“{t.text}”</p>
+            <div class="mt-6 flex items-center gap-3 border-t border-navy/8 pt-5">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-navy font-display font-bold text-gold">
+                {t.name.charAt(0)}
+              </span>
+              <div>
+                <p class="font-bold text-navy">{t.name}</p>
+                <p class="text-sm text-slate">{t.role}</p>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

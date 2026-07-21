@@ -1,0 +1,74 @@
+---
+import Icon from "./Icon.astro";
+---
+<section id="inicio" class="relative flex min-h-[640px] items-center overflow-hidden bg-navy pt-28 pb-24 lg:min-h-[720px] lg:pb-32">
+  <!-- background photo -->
+  <img
+    src="/banner-hero.png"
+    alt="Crianças da Escola Premium explorando um globo terrestre em sala de aula"
+    class="absolute inset-0 h-full w-full object-cover object-[72%_center]"
+    fetchpriority="high"
+  />
+  <!-- legibility scrim: strong on the left where the copy sits, clearing to the right over the kids -->
+  <div class="absolute inset-0 bg-navy/70 lg:bg-transparent" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-transparent lg:via-navy/70" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy to-transparent" aria-hidden="true"></div>
+
+  <div class="u-container relative">
+    <div class="max-w-xl text-white lg:max-w-2xl">
+      <p class="u-eyebrow text-gold">
+        <Icon name="star" class="h-4 w-4" /> Educação forte, formação para a vida
+      </p>
+
+      <h1 class="mt-5 text-4xl font-extrabold leading-[1.04] sm:text-5xl lg:text-6xl">
+        Seu filho merece uma escola que prepara para a <span class="text-gold">vida.</span>
+      </h1>
+
+      <p class="mt-6 max-w-xl text-lg text-white/80">
+        Muito mais do que ensinar conteúdos, desenvolvemos valores, autonomia, criatividade e
+        fluência em inglês desde os primeiros anos.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href="#sobre"
+          class="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 font-bold text-navy shadow-float transition-transform hover:-translate-y-0.5"
+        >
+          Conheça a Escola
+          <Icon name="arrow" class="h-4 w-4" />
+        </a>
+        <a
+          href="#contato"
+          class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/5 px-6 py-3.5 font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/15"
+        >
+          Agendar Visita
+          <Icon name="calendar" class="h-4 w-4" />
+        </a>
+      </div>
+
+      <div class="mt-9 flex items-center gap-3">
+        <div class="flex -space-x-3">
+          {
+            [0, 1, 2, 3].map((i) => (
+              <span class={`h-9 w-9 rounded-full border-2 border-navy bg-gradient-to-br ${i % 2 ? "from-gold to-gold-600" : "from-royal-100 to-royal"}`} />
+            ))
+          }
+        </div>
+        <p class="text-sm text-white/80">
+          <span class="font-bold text-white">+2.500 famílias</span> confiam na Escola Premium
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- floating badge near the kids -->
+  <div class="absolute bottom-28 right-6 hidden items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-float xl:flex">
+    <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-royal-100 text-royal">
+      <Icon name="globe" class="h-6 w-6" />
+    </span>
+    <div class="leading-tight">
+      <p class="text-sm font-bold text-navy">Ensino Bilíngue</p>
+      <p class="text-xs text-slate">Do berçário ao Fundamental I</p>
+    </div>
+  </div>
+</section>

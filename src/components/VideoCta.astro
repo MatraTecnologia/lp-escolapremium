@@ -1,0 +1,45 @@
+---
+import Icon from "./Icon.astro";
+import Photo from "./Photo.astro";
+---
+<section class="pb-20 sm:pb-28">
+  <div class="u-container">
+    <div class="relative overflow-hidden rounded-[2rem] shadow-float">
+      <div class="absolute inset-0">
+        <Photo src="/escola.jpg" alt="Fachada da Escola Premium" tone="navy" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/40"></div>
+
+      <div class="relative flex flex-col items-start gap-8 px-6 py-14 sm:px-12 lg:flex-row lg:items-center lg:justify-between">
+        <div class="max-w-lg text-white">
+          <p class="u-eyebrow text-gold">
+            <Icon name="star" class="h-4 w-4" /> Conheça em 2 minutos
+          </p>
+          <h2 class="mt-4 text-3xl font-extrabold sm:text-4xl">
+            Conheça a Escola Premium em 2 minutos.
+          </h2>
+          <p class="mt-4 text-white/75">
+            Assista ao nosso vídeo institucional e descubra por que somos a escolha certa para o
+            futuro do seu filho.
+          </p>
+          <button
+            type="button"
+            class="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-bold text-navy transition-transform hover:-translate-y-0.5"
+          >
+            Assistir vídeo
+            <Icon name="play" class="h-4 w-4" />
+          </button>
+        </div>
+
+        <button
+          type="button"
+          class="group flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-gold text-navy shadow-float transition-transform hover:scale-105"
+          aria-label="Reproduzir vídeo institucional"
+        >
+          <Icon name="play" class="h-8 w-8 translate-x-0.5" />
+          <span class="absolute h-20 w-20 animate-ping rounded-full bg-gold/40 [animation-duration:2.5s]"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

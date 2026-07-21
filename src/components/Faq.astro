@@ -1,0 +1,31 @@
+---
+import Icon from "./Icon.astro";
+import { faqs } from "../data/site";
+---
+<section class="pb-20 sm:pb-28">
+  <div class="u-container max-w-3xl">
+    <div class="text-center">
+      <p class="u-eyebrow justify-center">
+        <Icon name="star" class="h-4 w-4 text-gold" /> Perguntas Frequentes
+      </p>
+      <h2 class="mt-4 text-3xl font-extrabold text-navy sm:text-4xl">Ainda tem dúvidas?</h2>
+      <p class="mt-3 text-slate">Reunimos as perguntas que as famílias mais nos fazem.</p>
+    </div>
+
+    <div class="mt-10 space-y-3">
+      {
+        faqs.map((item) => (
+          <details class="group rounded-2xl border border-navy/8 bg-white px-5 shadow-card open:border-royal/30">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-semibold text-navy [&::-webkit-details-marker]:hidden">
+              {item.q}
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-mist text-navy transition-transform group-open:rotate-180 group-open:bg-royal group-open:text-white">
+                <Icon name="chevron" class="h-5 w-5" />
+              </span>
+            </summary>
+            <p class="pb-5 text-slate leading-relaxed">{item.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
