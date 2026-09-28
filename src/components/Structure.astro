@@ -32,7 +32,7 @@ import { structure } from "../data/site";
         structure.map((item) => (
           <li class="w-[16rem] shrink-0 snap-start overflow-hidden rounded-2xl bg-white shadow-card">
             <div class="aspect-[4/3]">
-              <Photo alt={item.title} label={item.title} tone="royal" />
+              <Photo src={item.image} alt={item.alt} class="transition-transform duration-500 hover:scale-105" />
             </div>
             <div class="p-5">
               <h3 class="font-bold text-navy">{item.title}</h3>

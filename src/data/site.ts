@@ -37,7 +37,7 @@ export const stats = [
 ];
 
 export const features = [
-  { icon: "globe", title: "Ensino Bilíngue", text: "Inglês no dia a dia com professores especializados e metodologia internacional." },
+  { icon: "globe", title: "Ensino Bilíngue", text: "Inglês no dia a dia com o apoio da solução bilíngue Eduall." },
   { icon: "heart", title: "Educação Socioemocional", text: "Desenvolvimento de habilidades emocionais, empatia e inteligência emocional." },
   { icon: "music", title: "Musicalização", text: "A música como ferramenta para desenvolvimento cognitivo e social." },
   { icon: "compass", title: "Projetos Integradores", text: "Aprendizagem prática que conecta o aluno com o mundo real." },
@@ -62,22 +62,20 @@ export const bilingualPoints = [
 ];
 
 export const structure = [
-  { title: "Sala Maker", text: "Tecnologia e criatividade em espaço inovador." },
-  { title: "Biblioteca", text: "Incentivo à leitura e amor pelos livros." },
-  { title: "Parquinho", text: "Diversão segura ao ar livre todos os dias." },
-  { title: "Sala Bilíngue", text: "Ambiente imersivo de inglês." },
-  { title: "Recepção Coberta", text: "Alfabetização e atividades físicas." },
-  { title: "Quadra Coberta", text: "Esportes e atividades físicas." },
-  { title: "Laboratório", text: "Experimentação e descobertas." },
+  { title: "Berçário", text: "Um espaço preparado para acolher os pequenos.", image: "/escola-premium/IMG_2692.webp", alt: "Berços no berçário da Escola Premium" },
+  { title: "Parquinho", text: "Brincadeiras e descobertas ao ar livre.", image: "/escola-premium/IMG_2703.webp", alt: "Parquinho colorido da Escola Premium" },
+  { title: "Refeitório", text: "Um espaço para as refeições em grupo.", image: "/escola-premium/IMG_2694.webp", alt: "Mesas do refeitório da Escola Premium" },
+  { title: "Atividades em sala", text: "Momentos de aprendizagem com a turma.", image: "/escola-premium/IMG_2704.webp", alt: "Crianças participando de uma atividade em sala" },
+  { title: "Fachada", text: "Conheça a entrada da nossa escola.", image: "/escola-premium/IMG_2767.webp", alt: "Fachada da Escola Premium" },
 ];
 
 export const gallery = [
-  "Country Day",
-  "Colônia de Férias",
-  "Festa Junina",
-  "Dia das Mães",
-  "Halloween",
-  "Festa Cultural",
+  { label: "Vivências no berçário", image: "/escola-premium/IMG_2691.webp", alt: "Educadoras e crianças em atividade no berçário" },
+  { label: "Brincar ao ar livre", image: "/escola-premium/IMG_2703.webp", alt: "Área do parquinho da Escola Premium" },
+  { label: "Momentos em sala", image: "/escola-premium/IMG_2705.webp", alt: "Crianças reunidas em sala de aula" },
+  { label: "Hora da alimentação", image: "/escola-premium/IMG_2721.webp", alt: "Crianças à mesa durante uma refeição" },
+  { label: "Espaço dos pequenos", image: "/escola-premium/IMG_2692.webp", alt: "Berços organizados no berçário" },
+  { label: "Nossa escola", image: "/escola-premium/IMG_2767.webp", alt: "Fachada da Escola Premium" },
 ];
 
 export const testimonials = [
@@ -88,8 +86,8 @@ export const testimonials = [
 
 export const faqs = [
   { q: "Quais são os horários de funcionamento?", a: "Funcionamos de segunda a sexta, das 7h às 19h, com opções de período integral, matutino e vespertino para atender à rotina de cada família." },
-  { q: "Como funciona o programa bilíngue?", a: "O inglês é vivenciado no dia a dia desde o berçário, com professores especializados e metodologia internacional de imersão progressiva." },
-  { q: "Qual é o material didático utilizado?", a: "Adotamos material didático internacional aliado a projetos integradores autorais, atualizados a cada ciclo pedagógico." },
+  { q: "Como funciona o programa bilíngue?", a: "O inglês é vivenciado no dia a dia desde os primeiros anos, com o apoio da solução bilíngue Eduall." },
+  { q: "Qual é o material didático utilizado?", a: "Utilizamos o Sistema Maxi de Ensino em nossa proposta pedagógica, que também valoriza a Pedagogia Afetiva." },
   { q: "Como é feita a segurança da escola?", a: "Contamos com monitoramento por câmeras, controle de acesso, equipe treinada e protocolos rígidos de entrada e saída." },
   { q: "Como faço para matricular meu filho?", a: "Basta agendar uma visita personalizada. Nossa equipe apresenta a escola, tira dúvidas e conduz todo o processo de matrícula." },
 ];

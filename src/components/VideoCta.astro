@@ -13,17 +13,17 @@ import Photo from "./Photo.astro";
       <div class="relative flex flex-col items-start gap-8 px-6 py-14 sm:px-12 lg:flex-row lg:items-center lg:justify-between">
         <div class="max-w-lg text-white">
           <p class="u-eyebrow text-gold">
-            <Icon name="star" class="h-4 w-4" /> Conheça em 2 minutos
+            <Icon name="star" class="h-4 w-4" /> Conheça a escola
           </p>
           <h2 class="mt-4 text-3xl font-extrabold sm:text-4xl">
-            Conheça a Escola Premium em 2 minutos.
+            Conheça a Escola Premium.
           </h2>
           <p class="mt-4 text-white/75">
-            Assista ao nosso vídeo institucional e descubra por que somos a escolha certa para o
-            futuro do seu filho.
+            Assista a um vídeo curto com momentos da nossa rotina e conheça mais de perto a escola.
           </p>
           <button
             type="button"
+            data-video-open
             class="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-bold text-navy transition-transform hover:-translate-y-0.5"
           >
             Assistir vídeo
@@ -33,8 +33,9 @@ import Photo from "./Photo.astro";
 
         <button
           type="button"
-          class="group flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-gold text-navy shadow-float transition-transform hover:scale-105"
-          aria-label="Reproduzir vídeo institucional"
+          data-video-open
+          class="group relative flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-gold text-navy shadow-float transition-transform hover:scale-105"
+          aria-label="Reproduzir vídeo da Escola Premium"
         >
           <Icon name="play" class="h-8 w-8 translate-x-0.5" />
           <span class="absolute h-20 w-20 animate-ping rounded-full bg-gold/40 [animation-duration:2.5s]"></span>
@@ -42,4 +43,29 @@ import Photo from "./Photo.astro";
       </div>
     </div>
   </div>
+
+  <dialog data-video-dialog class="m-auto max-h-[95vh] max-w-[95vw] rounded-2xl border-0 bg-navy p-3 text-white shadow-float backdrop:bg-navy/85 sm:p-4">
+    <div class="mb-2 flex justify-end">
+      <button type="button" data-video-close class="rounded-full px-3 py-1 text-sm font-semibold hover:bg-white/10" aria-label="Fechar vídeo">Fechar ✕</button>
+    </div>
+    <video class="mx-auto max-h-[80vh] max-w-full rounded-lg" controls playsinline preload="none" aria-label="Vídeo com cenas reais da Escola Premium">
+      <source src="/escola-premium/conheca-a-escola.mp4" type="video/mp4" />
+      Seu navegador não suporta a reprodução deste vídeo.
+    </video>
+  </dialog>
 </section>
+
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>("[data-video-dialog]");
+  const video = dialog?.querySelector<HTMLVideoElement>("video");
+
+  document.querySelectorAll<HTMLButtonElement>("[data-video-open]").forEach((button) => {
+    button.addEventListener("click", () => {
+      dialog?.showModal();
+      video?.play().catch(() => {});
+    });
+  });
+
+  dialog?.querySelector("[data-video-close]")?.addEventListener("click", () => dialog.close());
+  dialog?.addEventListener("close", () => video?.pause());
+</script>

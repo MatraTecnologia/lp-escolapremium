@@ -2,14 +2,19 @@
 import Icon from "./Icon.astro";
 import { site, footerLinks } from "../data/site";
 ---
+
 <footer class="bg-navy-900 pt-16 text-white/70">
   <div class="u-container">
     <div class="grid gap-10 pb-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.2fr]">
       <div>
-        <img src="/logo-horizontal.svg" alt="Escola Premium" class="u-logo-white h-9 w-auto" />
+        <img
+          src="/logo-horizontal.svg"
+          alt="Escola Premium"
+          class="u-logo-white h-9 w-auto"
+        />
         <p class="mt-4 max-w-xs text-sm leading-relaxed">
-          Educação forte e formação para a vida. Ensino bilíngue e metodologia internacional do
-          berçário ao Fundamental I.
+          Educação forte e formação para a vida. Ensino bilíngue e metodologia
+          internacional do berçário ao Fundamental I.
         </p>
         <div class="mt-5 flex gap-3">
           <a
@@ -36,11 +41,15 @@ import { site, footerLinks } from "../data/site";
       {
         Object.entries(footerLinks).map(([title, links]) => (
           <div>
-            <h3 class="font-display text-sm font-bold uppercase tracking-wider text-white">{title}</h3>
+            <h3 class="font-display text-sm font-bold uppercase tracking-wider text-white">
+              {title}
+            </h3>
             <ul class="mt-4 space-y-2.5 text-sm">
               {links.map((l) => (
                 <li>
-                  <a href="#" class="transition-colors hover:text-gold">{l}</a>
+                  <a href="#" class="transition-colors hover:text-gold">
+                    {l}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -49,11 +58,24 @@ import { site, footerLinks } from "../data/site";
       }
 
       <div>
-        <h3 class="font-display text-sm font-bold uppercase tracking-wider text-white">Contato</h3>
+        <h3
+          class="font-display text-sm font-bold uppercase tracking-wider text-white"
+        >
+          Contato
+        </h3>
         <ul class="mt-4 space-y-3 text-sm">
-          <li class="flex items-center gap-2.5"><Icon name="phone" class="h-4 w-4 text-gold" /> {site.phone}</li>
-          <li class="flex items-start gap-2.5"><Icon name="pin" class="mt-0.5 h-4 w-4 shrink-0 text-gold" /> <span>{site.address}<br />{site.city}</span></li>
-          <li class="flex items-center gap-2.5"><Icon name="clock" class="h-4 w-4 text-gold" /> {site.hours}</li>
+          <li class="flex items-center gap-2.5">
+            <Icon name="phone" class="h-4 w-4 text-gold" />
+            {site.phone}
+          </li>
+          <li class="flex items-start gap-2.5">
+            <Icon name="pin" class="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+            <span>{site.address}<br />{site.city}</span>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <Icon name="clock" class="h-4 w-4 text-gold" />
+            {site.hours}
+          </li>
         </ul>
 
         <div class="mt-5 overflow-hidden rounded-2xl ring-1 ring-white/10">
@@ -65,8 +87,7 @@ import { site, footerLinks } from "../data/site";
             style="border:0;"
             loading="lazy"
             referrerpolicy="strict-origin-when-cross-origin"
-            class="block grayscale-[0.2]"
-          ></iframe>
+            class="block grayscale-[0.2]"></iframe>
           <a
             href={site.mapLink}
             target="_blank"
@@ -80,10 +101,14 @@ import { site, footerLinks } from "../data/site";
       </div>
     </div>
 
-    <div class="flex flex-col items-center justify-between gap-3 border-t border-white/10 py-6 text-xs sm:flex-row">
-      <p>© 2026 {site.name}. Todos os direitos reservados.</p>
+    <div
+      class="flex flex-col items-center justify-between gap-3 border-t border-white/10 py-6 text-xs sm:flex-row"
+    >
+      <p>© 2027 {site.name}. Todos os direitos reservados.</p>
       <div class="flex gap-5">
-        <a href="#" class="transition-colors hover:text-gold">Política de Privacidade</a>
+        <a href="#" class="transition-colors hover:text-gold"
+          >Política de Privacidade</a
+        >
         <a href="#" class="transition-colors hover:text-gold">Termos de Uso</a>
       </div>
     </div>
